@@ -6,7 +6,7 @@ from datetime import datetime
 
 app = Flask(__name__)
 app.secret_key = 'I am superman'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://postgres:dhruvi07@localhost/test'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://qsbkrsxpbkslxj:f68aa8dcdee65e4d44e3a3615ad38e5098211d37d516b428e5a45e3309b763e4@ec2-50-16-108-41.compute-1.amazonaws.com:5432/d2rhepktid242g'
 db = SQLAlchemy(app)
 
 class Customers(db.Model):
