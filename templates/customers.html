@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Customers</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='customers.css')}}"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<body>
+{% include 'layout.html' %}
+
+    <table class="center">
+   <thead>
+    <tr>
+      <th scope="col">Account No.</th>
+      <th scope="col">Name</th>
+      <th scope="col">Email ID</th>
+      <th scope="col">Balance</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for customer in customers %}
+  <tr>
+      <th scope="row">{{customer.account_no}}</th>
+      <td>{{customer.name}}</td>
+      <td>{{customer.email_id}}</td>
+      <td>{{customer.balance}}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+
+    {{data}}
+
+</body>
+
+</html>

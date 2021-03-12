@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Transfer</title>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{url_for('static',filename='transfer.css')}}"/>
+</head>
+<body>
+{% include 'layout.html' %}
+<div class="login">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                    <div class="alert alert-dismissible fade in alert-{{ category }}">
+                        <a href="" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        <strong>{{ message }}</strong>
+                    </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+<form name="pass" action="/transfer" method="post">
+    <table>
+        <tr>
+            <td align="right">Sender's Account No.:</td>
+            <td align="left"><input type="text"  name="sender_acc" required></td>
+        </tr>
+         <tr>
+            <td align="right">Receiver's Account No.:</td>
+            <td align="left"><input type="text"  name="receiver_acc" required></td>
+        </tr>
+         <tr>
+            <td align="right">Amount:</td>
+            <td align="left"><input type="number" name="amount" required></td>
+        </tr>
+    </table>
+
+
+    <button class="button" type="submit">  Transfer  </button>
+
+</form>
+</div>
+
+</body>
+</html>

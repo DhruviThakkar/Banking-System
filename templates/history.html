@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Transaction History</title>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{url_for('static',filename='history.css')}}"/>
+</head>
+<body>
+{% include 'layout.html' %}
+<table class="center">
+   <thead>
+    <tr>
+      <th scope="col">Transaction ID</th>
+      <th scope="col">Sender's Account No.</th>
+      <th scope="col">Receiver's Account No.</th>
+      <th scope="col">Amount Transferred</th>
+      <th scope="col">Transaction Status</th>
+      <th scope="col">Time</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for history in history %}
+  <tr>
+      <th scope="row">{{history.transaction_id}}</th>
+      <td>{{history.sender_acc}}</td>
+      <td>{{history.receiver_acc}}</td>
+      <td>{{history.amount}}</td>
+      {% if history.status == "Success" %}
+        {% set status_color = 'rgb(36, 139, 76)' %}
+      {% else %}
+        {% set status_color = 'rgb(228, 24, 24)' %}
+      {% endif %}
+      <td style="color: {{status_color}}; font-weight: bold;">{{ history.status }}</td>
+
+
+      <td>{{history.time}}</td>
+  </tr>
+  {% endfor %}
+  </tbody>
+</table>
+</body>
+</html>

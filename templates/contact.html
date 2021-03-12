@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>contact</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{url_for('static',filename='contact.css')}}"/>
+</head>
+
+<body>
+
+   {% include 'layout.html' %}
+        <h1>Contact Us</h1>
+        <table class="center">
+            <tr>
+                <td><i class="fa fa-envelope" style="font-size:16px;"></i> E-mail</td>
+                <td colspan="2">banking.tsf@email.com</td>
+            </tr>
+            <tr>
+                <td><i class="fa fa-phone" style="font-size:16px;"></i> Phone No.</td>
+                <td>1800-1234-9876</td>
+                <td>1800-9876-1234</td>
+            </tr>
+            <tr>
+                <td><i class="fa fa-map-marker" style="font-size:16px;"></i> Address</td>
+                <td>15, Plot No11, Crown Plaza,<br>Sec 19 C, Vashi, Navi Mumbai, 400705</td>
+                <td>39/41, Pinjari Lane, Abdul Rehman Street<br>Delhi, 110055</td>
+            </tr>
+        </table>
+
+
+
+</body>
+
+</html>

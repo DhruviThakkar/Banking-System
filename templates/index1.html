@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>TSG Banking</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}"/>
+</head>
+
+<body>
+{% include 'layout.html' %}
+        <h1>Welcome to TSF-Banking</h1>
+        <h3>Banking, Fund Transfer and Account Update</h3>
+        <div class="row">
+            <div class="col-lg-1 col-md-3">
+                <p>
+                    <a  href="customers">Customers</a></p>
+            </div>
+            <div class="col-lg-1 col-md-3">
+                <p><a style="color: white; text-decoration: none; padding: 30px;" href="transfer">Transfer Money</a></p>
+            </div>
+            <div class="col-lg-1 col-md-3">
+                <p><a style="color: white; text-decoration: none; padding: 30px;" href="history">Transaction History</a></p>
+            </div>
+        </div>
+
+
+</body>
+
+</html>
